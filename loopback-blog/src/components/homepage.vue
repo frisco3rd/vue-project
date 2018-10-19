@@ -1,11 +1,16 @@
 <template>
 
 <div class="container">
+
     <div class="row justify-content-center my-5">
         <div class="col-6">
+                                    <h2>Client List</h2>
+
             <div class="card mb-5">
                 <div class="card-body">
+                    
                     <div class="form-group mb-3">
+                        
                         <input type="text" name="" id="" class="form-control" placeholder="Enter your Name" v-model="name">
                         </div>
                         <div class="form-group mb-3">
@@ -20,7 +25,6 @@
 
             </div>
         </div>
-                    <h2>Client List</h2>
                 <div class="card mb-3" v-for="meets in meetups">
                     <div class="card-body">
                          <h3>{{meets.name}}</h3>
@@ -31,7 +35,8 @@
 
                         </div>
                         <button class="btn btn-danger" v-on:click="deletePost(meets.id)">Delete</button>
-                        <button class="btn btn-safe" v-on:click="updatePost(meets.id)">Edit</button>
+                        
+                        <!--Not Working <button class="btn btn-safe" v-on:click="updatePost(meets.id)">Edit</button> -->
 
 
                 </div>
