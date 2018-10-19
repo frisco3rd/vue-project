@@ -23,6 +23,8 @@
                          <h3>{{meets.name}}</h3>
                         <p v-text="meets.city"></p>
                         <p v-text="meets.address"></p>
+                         <p v-text="meets.id"></p>
+
                         </div>
                         <button class="btn btn-danger" v-on:click="deletePost(meets.id)">Delete</button>
 
@@ -48,12 +50,15 @@ export default {
   },
   mounted() {
       this.getMeetups()
+      console.log(this.meetups)
+
   },
   methods: {
       addPost(){
           const data = {
               name: this.name,
               city: this.city,
+              
               }
           axios.post('http://localhost:3000/api/meetups', data).then(response =>{
               this.getMeetups()
@@ -68,8 +73,7 @@ export default {
     },
     deletePost(id){
       axios.delete("http://localhost:3000/api/meetups/" + id).then(response => {
-          this.meetups.splice(id,1)
-        console.log(response)
+          this.getMeetups()
       })
     },
     clearInput(){
