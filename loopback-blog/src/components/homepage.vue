@@ -24,8 +24,7 @@
                         <p v-text="meets.city"></p>
                         <p v-text="meets.address"></p>
                         </div>
-                <button class="btn btn-danger" v-on:click="deletePost">Delete</button>
-
+                        <button class="btn btn-danger" v-on:click="deletePost(meets.id)">Delete</button>
 
                 </div>
 </div>
